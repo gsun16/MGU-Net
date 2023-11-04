@@ -1,9 +1,14 @@
 #!/home/users/user1/anaconda3/envs/env_py38/bin/python
 # -*- coding: utf-8 -*-
 # @Author:Jiaxuan Li
+
+
+
+
+
 ##### System library #####
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 import os.path as osp
 from os.path import exists
 import argparse
@@ -19,6 +24,8 @@ from torch.autograd import Variable
 ##### My own library #####
 import data.seg_transforms as dt
 from data.seg_dataset import segList
+import sys
+sys.path.append(r'C:\Users\12179\Desktop\OCT\ml\MGU-Net\utils')
 from utils.logger import Logger
 from models.net_builder import net_builder
 from utils.loss import loss_builder1,loss_builder2
@@ -391,4 +398,9 @@ def main():
 
 
 if __name__ == '__main__':
+    print("check cuda")
+
+    print(torch.__version__)
+    print(torch.version.cuda)
+    print(torch.cuda.is_available())
     main()

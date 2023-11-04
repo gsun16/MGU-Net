@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import sys
+sys.path.append(r'C:\Users\12179\Desktop\OCT\ml\MGU-Net\models\utils')
 from init_weights import init_weights
 
 class Basconv(nn.Sequential):
